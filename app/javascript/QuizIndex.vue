@@ -1,8 +1,10 @@
 <template>
-  <div id="app">
-    <ul v-for="quiz in quizzes" :key="quiz.id">
-      <li>{{ quiz.title }}</li>
-    </ul>
+  <div class="container">
+    <div id="app">
+      <ul v-for="quiz in quizzes" :key="quiz.id">
+        <li>{{ quiz.title }}</li>
+      </ul>
+    </div>
   </div>
 </template>
 
