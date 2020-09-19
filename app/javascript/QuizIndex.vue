@@ -1,15 +1,24 @@
 <template>
   <div id="app">
-    <p>{{ message }}</p>
+    <ul v-for="quiz in quizzes" :key="quiz.id">
+      <li>{{ quiz.title }}</li>
+    </ul>
   </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
   data: function () {
     return {
-      message: "Hello Vue!"
+      quizzes: []
     }
+  },
+  mounted() {
+    axios
+      .get('/api/v1/quizzes.json')
+      .then(response => (this.quizzes = response.data))
   }
 }
 </script>
