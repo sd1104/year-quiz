@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyText
+  correct: MyText
+  uncorrect1: MyText
+  uncorrect1: MyText
+  explanation: MyText
+
+two:
+  title: MyText
+  correct: MyText
+  uncorrect1: MyText
+  uncorrect1: MyText
+  explanation: MyText
