@@ -27,10 +27,10 @@ ActiveRecord::Schema.define(version: 2020_09_19_135344) do
   end
 
   create_table "quizzes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.text "title", null: false
-    t.text "correct", null: false
-    t.text "uncorrect1", null: false
-    t.text "uncorrect2", null: false
+    t.string "title", null: false
+    t.string "correct", null: false
+    t.string "uncorrect1", null: false
+    t.string "uncorrect2", null: false
     t.text "explanation", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
