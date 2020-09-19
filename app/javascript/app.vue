@@ -1,17 +1,24 @@
 <template>
-  <div id="app">
-    <p>{{ message }}</p>
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-export default {
-  data: function () {
-    return {
-      message: "Hello Vue!"
-    }
+  import Vue from 'vue'
+  import VueRouter from 'vue-router'
+
+  import QuizIndex from 'QuizIndex.vue'
+
+  const router = new VueRouter ({
+    routes: [
+      { path: '/',
+        component: QuizIndex }
+    ]
+  })
+  Vue.use(VueRouter)
+  export default {
+    router
   }
-}
+
 </script>
 
 <style scoped>
