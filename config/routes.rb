@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'home/index'
+  root to: 'home#index'
   namespace :api do
     namespace :v1 do
-      get 'quizzes/index'
-      get 'quizzes/show'
+      resources :quizzes, only: [ :index, :show ]
     end
   end
   ActiveAdmin.routes(self)
