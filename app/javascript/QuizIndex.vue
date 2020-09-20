@@ -83,6 +83,21 @@ export default {
           console.log(error);
         });
     },
+    shuffleQuizzes: function(quizChoices) {
+      const choices = quizChoices.slice();
+      for ( let i = choices.length -1; 0 < i; i--) {
+        let r = Math.floor(Math.random() * ( i + 1 ));
+        [ choices[i], choices[r] = [ choices[r], choices[i]]];
+
+        console.log(`i:${i}`)
+        console.log(`r:${r}`)
+        console.log(`choices[i]:${choices[i]}`)
+        console.log(`choices[r]:${choices[r]}`)
+        console.log(`Math.random:${Math.random()}`)
+        console.log(`choices:${choices}`)
+      }
+      return choices;
+    },
     InsertChoices: function(index) {
       this.quizChoices = [];
       this.quizChoices.push(
@@ -93,7 +108,7 @@ export default {
       this.quizChoices = this.shuffleQuizzes(this.quizChoices)
 
       console.log(`index:${index}`);
-      console.log(`quizChoices:${this.quizzes[index].correct}`);
+      console.log(`quizChoices[${index}].correct:${this.quizzes[index].correct}`);
     }
   }
 }
