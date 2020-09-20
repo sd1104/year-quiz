@@ -1,10 +1,14 @@
 <template>
   <div class="container">
-    <div id="app">
-      <ul v-for="quiz in quizzes" :key="quiz.id">
-        <li>{{ quiz.title }}</li>
-      </ul>
-    </div>
+    <main>
+      <article>
+
+        <section>
+
+        </section>
+
+      </article>
+    </main>
   </div>
 </template>
 
@@ -14,8 +18,26 @@ import axios from 'axios';
 export default {
   data: function () {
     return {
-      quizzes: []
-    }
+      quizCount: 1,
+      totalQuizCount: 0,
+      totalCorrectCount: 0,
+      quizzes: [
+        {
+          title: "",
+          correct:"",
+          uncorrect1: "",
+          uncorrect2: "",
+          explanation: ""
+        }
+      ],
+      quizChoices: [],
+      showQuiz: true,
+      showExplanation: false,
+      hidden: false,
+      alertMessage: false,
+      result: "",
+      axiosUrl: ""
+    };
   },
   mounted() {
     axios
