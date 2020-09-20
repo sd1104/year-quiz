@@ -16,7 +16,27 @@
           </div>
         </div>
       </div>
+
+      <div class="p-quiz__explain" v-if="showExplanation">
+        <h2 class="is-correct" v-if="judgement">
+          <i class="far fa-circle mr-4"></i>正解！
+        </h2>
+        <h2 class="is-uncorrect" v-else>
+          <i class="fas fa-times mr-4"></i>不正解
+        </h2>
+        <p>
+          <strong>解説：</strong>
+          {{quizzes[quizNumber-1].explanation}}
+        </p>
+        <button @click="Next()" type="button" class="btn btn-default">次へ</button>
+      </div>
     </section>
+
+    <!-- <sectin>
+      <pre>
+        {{ $data }}
+      </pre>
+    </sectin> -->
 
     <section v-if="alertMessage">
       <p>
@@ -25,7 +45,11 @@
       </p>
       <a href="/">クイズTOPへ</a>
     </section>
+
+    <!-- <quiz-result ref="result" :totalCorrectNum="totalCorrectNum"></quiz-result> -->
   </article>
+
+
 </template>
 
 <script>
@@ -116,7 +140,6 @@ export default {
       if (choice === answer) {
         this.judgement = true;
         this.totalCorrectCount++;
-        this.$ref.totalCorrectCount;
       } else {
         this.judgement = false;
       }
@@ -126,7 +149,7 @@ export default {
         this.showQuiz = true;
         this.showExplanation = false;
         this.quizNumber++;
-        this.nextcounter++;
+        // this.nextcounter++;
         this.InsertChoices(this.quizNumber - 1);
       } else {
         this.$refs.result.showResult();
