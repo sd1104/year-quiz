@@ -18,11 +18,13 @@
 import QuizHeader from "QuizHeader.vue"
 import QuizFooter from "QuizFooter.vue"
 import QuizContent from "QuizContent.vue"
+import QuizResult from "QuizResult.vue"
 import axios from 'axios';
 
 export default {
   name: "QuizIndex",
   components: {
+    QuizResult,
     QuizHeader,
     QuizFooter,
     QuizContent

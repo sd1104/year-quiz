@@ -1,32 +1,38 @@
 <template>
-  <div>
-    <header>
-      <quiz-header></quiz-header>
-    </header>
+  <article class="container">
+    <section>
+      <div v-if="hidden">
+        <h1>
+          問題{{ quizNumber }}
+          {{ quizzes[quizNumber - 1].title }}
+        </h1>
+        <div v-if="showQuiz">
+          <div>
+            <ul v-for="choice in quizChoices" :key="choice.id">
+              <li @click="ShowAnswer(choice)">
+                {{ choice }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <main>
-      <quiz-content></quiz-content>
-    </main>
-
-    <footer>
-      <quiz-footer></quiz-footer>
-    </footer>
-  </div>
+    <section v-if="alertMessage">
+      <p>
+        <i></i>クイズはまだ登録されていません。
+        <i></i>
+      </p>
+      <a href="/">クイズTOPへ</a>
+    </section>
+  </article>
 </template>
 
 <script>
-import QuizHeader from "QuizHeader.vue"
-import QuizFooter from "QuizFooter.vue"
-import QuizContent from "QuizContent.vue"
 import axios from 'axios';
 
 export default {
-  name: "QuizIndex",
-  components: {
-    QuizHeader,
-    QuizFooter,
-    QuizContent
-  },
+  name: "QuizContent",
   data: function () {
     return {
       quizNumber: 1,
