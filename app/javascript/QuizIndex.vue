@@ -35,8 +35,7 @@ export default {
       showExplanation: false,
       hidden: false,
       alertMessage: false,
-      result: "",
-      axiosUrl: ""
+      judgement: "",
     };
   },
   created() {
@@ -44,25 +43,6 @@ export default {
   },
   methods: {
     InsertQuizzes() {
-      // let quizUrl = location.pathname;
-      //   console.log(`quizUrl:${quizUrl}`);
-      // let catId = quizUrl.match(/\d/g);
-      //   console.log(`catId:${catId}`);
-      // let catNumber;
-      //   console.log(`catNumber:${catNumber}`);
-      // if (catId) {
-      //   catNumber = catId.join("");
-      // }
-
-      // if ( quizUrl == "/quiz/" + catNumber ) {
-      //   this.axiosUrl = "ajax/menu" + catNumber;
-      // } else if ( quizUrl == "/quiz/region/" + catNumber) {
-      //   this.axiosUrl = "ajax/region" + catNumber;
-      // } else {
-      //   this.axiosUrl = "ajax/menu";
-      // }
-      // console.log(`axiosUrl:${axiosUrl}`);
-
       axios
         .get('api/v1/quizzes.jason')
         .then( response => {
@@ -109,7 +89,21 @@ export default {
 
       console.log(`index:${index}`);
       console.log(`quizChoices[${index}].correct:${this.quizzes[index].correct}`);
-    }
+    },
+    ShowAnswer: function(choice) {
+      this.showQuiz = !this.showQuiz;
+      this.showExplanation = !this.showExplanation;
+
+      let answer = this.quizzes[this.quizCount - 1].correct;
+      if (choice === answer) {
+        this.judgement = true;
+        this.totalCorrectCount++;
+        this.$ref.totalCorrectCount;
+      } else {
+        this.judgement = false;
+      }
+    },
+
   }
 }
 </script>
