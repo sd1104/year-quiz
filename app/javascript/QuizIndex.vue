@@ -103,7 +103,17 @@ export default {
         this.judgement = false;
       }
     },
-
+    Next: function() {
+      if (this.quizCount < this.totalQuizCount) {
+        this.showQuiz = true;
+        this.showExplanation = false;
+        this.quizCount++;
+        this.nextcounter++;
+        this.InsertChoices(this.quizCount - 1);
+      } else {
+        this.$refs.result.showResult();
+      }
+    }
   }
 }
 </script>
