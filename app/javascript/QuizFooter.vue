@@ -1,5 +1,7 @@
 <template>
-  <p>{{ message }}</p>
+  <nav class="navbar navbar-light d-flex flex-row-reverse footer" style="background-color: #e3f2fd;">
+    <p>Copy Right sd1104</p>
+  </nav>
 </template>
 
 <script>
@@ -14,8 +16,4 @@ export default {
 </script>
 
 <style scoped>
-p {
-  font-size: 2em;
-  text-align: center;
-}
 </style>

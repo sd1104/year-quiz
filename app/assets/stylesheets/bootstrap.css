@@ -1,3 +1,24 @@
 .container {
-  padding: 50px;
+  min-height: calc(98vh - 100px);
+  padding: 10px;
+}
+
+.header {
+  height: 60px !important;
+}
+
+.footer {
+  line-height: 40px;
+}
+
+.nav-title {
+  font-size: 25px;
+  margin-right: 50px;
+}
+
+#router-link {
+  text-decoration: none;
+}
+#router-link:hover {
+  color: lightblue;
 }
