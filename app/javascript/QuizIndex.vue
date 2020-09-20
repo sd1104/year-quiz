@@ -47,9 +47,9 @@ export default {
         .get('api/v1/quizzes.jason')
         .then( response => {
           this.quizzes = response.data;
-          console.log(`quizzes:${this.quizzes}`);
+          // console.log(`quizzes:${this.quizzes}`);
           this.totalQuizCount = this.quizzes.length;
-          console.log(`totalQuizCount:${this.totalQuizCount}`);
+          // console.log(`totalQuizCount:${this.totalQuizCount}`);
 
           if (this.totalQuizCount) {
             this.hidden = true;
@@ -57,7 +57,7 @@ export default {
             this.alertMessage = true;
           }
           this.InsertChoices(this.quizCount - 1);
-          console.log(`quizCount:${this.quizCount}`);
+          // console.log(`quizCount:${this.quizCount}`);
         })
         .catch(error => {
           console.log(error);
@@ -69,12 +69,12 @@ export default {
         let r = Math.floor(Math.random() * ( i + 1 ));
         [ choices[i], choices[r] = [ choices[r], choices[i]]];
 
-        console.log(`i:${i}`)
-        console.log(`r:${r}`)
-        console.log(`choices[i]:${choices[i]}`)
-        console.log(`choices[r]:${choices[r]}`)
-        console.log(`Math.random:${Math.random()}`)
-        console.log(`choices:${choices}`)
+        // console.log(`i:${i}`)
+        // console.log(`r:${r}`)
+        // console.log(`choices[i]:${choices[i]}`)
+        // console.log(`choices[r]:${choices[r]}`)
+        // console.log(`Math.random:${Math.random()}`)
+        // console.log(`choices:${choices}`)
       }
       return choices;
     },
@@ -87,8 +87,8 @@ export default {
       );
       this.quizChoices = this.shuffleQuizzes(this.quizChoices)
 
-      console.log(`index:${index}`);
-      console.log(`quizChoices[${index}].correct:${this.quizzes[index].correct}`);
+      // console.log(`index:${index}`);
+      // console.log(`quizChoices[${index}].correct:${this.quizzes[index].correct}`);
     },
     ShowAnswer: function(choice) {
       this.showQuiz = !this.showQuiz;
