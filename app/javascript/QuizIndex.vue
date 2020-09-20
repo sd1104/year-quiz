@@ -77,12 +77,24 @@ export default {
             this.alertMessage = true;
           }
           this.InsertChoices(this.quizCount - 1);
+          console.log(`quizCount:${this.quizCount}`);
         })
         .catch(error => {
           console.log(error);
         });
     },
+    InsertChoices: function(index) {
+      this.quizChoices = [];
+      this.quizChoices.push(
+        this.quizzes[index].correct,
+        this.quizzes[index].uncorrect1,
+        this.quizzes[index].uncorrect2
+      );
+      this.quizChoices = this.shuffleQuizzes(this.quizChoices)
 
+      console.log(`index:${index}`);
+      console.log(`quizChoices:${this.quizzes[index].correct}`);
+    }
   }
 }
 </script>
