@@ -31,16 +31,21 @@
 
       </article>
 
-      <!-- <quiz-result ref="result" :totalCorrectNumber="totalCorrectNumber"></quiz-result> -->
+      <quiz-result></quiz-result>
 
     </main>
   </div>
 </template>
 
 <script>
+import QuizResult from "QuizResult.vue"
 import axios from 'axios';
 
 export default {
+  name: "QuizIndex",
+  components: {
+    QuizResult
+  },
   data: function () {
     return {
       quizNumber: 1,
