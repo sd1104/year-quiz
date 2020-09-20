@@ -39,10 +39,50 @@ export default {
       axiosUrl: ""
     };
   },
-  mounted() {
-    axios
-      .get('/api/v1/quizzes.json')
-      .then(response => (this.quizzes = response.data))
+  created() {
+    this.InsertQuizzes();
+  },
+  methods: {
+    InsertQuizzes() {
+      // let quizUrl = location.pathname;
+      //   console.log(`quizUrl:${quizUrl}`);
+      // let catId = quizUrl.match(/\d/g);
+      //   console.log(`catId:${catId}`);
+      // let catNumber;
+      //   console.log(`catNumber:${catNumber}`);
+      // if (catId) {
+      //   catNumber = catId.join("");
+      // }
+
+      // if ( quizUrl == "/quiz/" + catNumber ) {
+      //   this.axiosUrl = "ajax/menu" + catNumber;
+      // } else if ( quizUrl == "/quiz/region/" + catNumber) {
+      //   this.axiosUrl = "ajax/region" + catNumber;
+      // } else {
+      //   this.axiosUrl = "ajax/menu";
+      // }
+      // console.log(`axiosUrl:${axiosUrl}`);
+
+      axios
+        .get('api/v1/quizzes.jason')
+        .then( response => {
+          this.quizzes = response.data;
+          console.log(`quizzes:${this.quizzes}`);
+          this.totalQuizCount = this.quizzes.length;
+          console.log(`totalQuizCount:${this.totalQuizCount}`);
+
+          if (this.totalQuizCount) {
+            this.hidden = true;
+          } else {
+            this.alertMessage = true;
+          }
+          this.InsertChoices(this.quizCount - 1);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    },
+
   }
 }
 </script>
