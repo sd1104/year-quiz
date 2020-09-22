@@ -179,10 +179,10 @@ export default {
       this.showExplanation = false;
       this.showResult = true;
     },
-    ResetQuiz: function() {
-      this.quizNumber = 1;
-      this.totalCorrectCount = 0;
-    }
+    // ResetQuiz: function() {
+    //   this.quizNumber = 1;
+    //   this.totalCorrectCount = 0;
+    // }
   }
 }
 </script>
