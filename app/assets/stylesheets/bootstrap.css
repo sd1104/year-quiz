@@ -22,3 +22,7 @@
 #router-link:hover {
   color: lightblue;
 }
+
+.result-count {
+  font-size: 40px;
+}

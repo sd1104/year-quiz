@@ -32,22 +32,20 @@
       </div>
 
       <div v-if="showResult">
-        <h4>結果だよーん</h4>
+        <h4>結果</h4>
         <p>
           正解数は
-          {{ totalCorrectCount }}
-          だよーん
+          <br>
+          <span class="result-count">
+            {{ totalCorrectCount }}問
+          </span>
+          ／５問でした
         </p>
-        <router-link :to="{ name: 'QuizPage1'}" id="router-link" @click="ResetQuiz()">
+        <router-link :to="{ name: 'Index'}" id="router-link">
           <span class="nav-title">
-            もう一度する
+            トップへ
           </span>
         </router-link>
-        <a href="/#/quiz/page1" @click="ResetQuiz()">
-          <button>
-            もう一度する
-          </button>
-        </a>
       </div>
 
     </section>
