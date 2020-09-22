@@ -1,51 +1,62 @@
 <template>
   <article class="container">
     <section>
-      <div v-if="hidden">
-        <h5>
+      <div v-if="hidden" class="quiz-card">
+        <h5 class="quiz-title">
           問題{{ quizNumber }}
           {{ quizzes[quizNumber - 1].title }}
         </h5>
+
         <div v-if="showQuiz">
-          <div>
+          <div class="quiz-choice">
             <ul v-for="choice in quizChoices" :key="choice.id">
-              <li @click="ShowAnswer(choice)">
-                {{ choice }}
-              </li>
+              <button type="button" class="btn btn-outline-secondary">
+                <li @click="ShowAnswer(choice)">
+                  {{ choice }}
+                </li>
+              </button>
             </ul>
+          </div>
+        </div>
+
+        <div class="p-quiz__explain" v-if="showExplanation">
+          <div class="quiz-explanation-body">
+            <h2 class="correct-answer" v-if="judgement">
+              <i class="far fa-circle mr-4"></i>
+              正解！
+            </h2>
+            <h2 class="uncorrect-answer" v-else>
+              <i class="fas fa-times mr-4"></i>
+              不正解
+            </h2>
+            <div class="quiz-explanation">
+              <strong>解説：</strong>
+              {{quizzes[quizNumber-1].explanation}}
+            </div>
+            <button @click="Next()" type="button" class="quiz-btn">次へ</button>
           </div>
         </div>
       </div>
 
-      <div class="p-quiz__explain" v-if="showExplanation">
-        <h2 class="is-correct" v-if="judgement">
-          <i class="far fa-circle mr-4"></i>正解！
-        </h2>
-        <h2 class="is-uncorrect" v-else>
-          <i class="fas fa-times mr-4"></i>不正解
-        </h2>
-        <p>
-          <strong>解説：</strong>
-          {{quizzes[quizNumber-1].explanation}}
-        </p>
-        <button @click="Next()" type="button" class="btn btn-default">次へ</button>
-      </div>
-
       <div v-if="showResult">
-        <h4>結果</h4>
-        <p>
-          正解数は
-          <br>
-          <span class="result-count">
-            {{ totalCorrectCount }}問
-          </span>
-          ／５問でした
-        </p>
-        <router-link :to="{ name: 'Index'}" id="router-link">
-          <span class="nav-title">
-            トップへ
-          </span>
-        </router-link>
+        <div class="quiz-card">
+          <h4 class="result-title">結果</h4>
+          <div class="quiz-result-body">
+            <div class="result-paresetation">
+              正解数は
+              <br>
+              <span class="result-count">
+                {{ totalCorrectCount }}問
+              </span>
+              ／５問でした
+            </div>
+            <router-link :to="{ name: 'Index'}" id="router-link">
+              <button type="button" class="result-btn">
+                トップへ
+              </button>
+            </router-link>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -103,7 +114,6 @@ export default {
   },
   methods: {
     InsertQuizzes() {
-      console.log('insert')
       axios
         .get('api/v1/quizzes.jason')
         .then( response => {
@@ -178,7 +188,7 @@ export default {
       this.showQuiz = false;
       this.showExplanation = false;
       this.showResult = true;
-    },
+    }
     // ResetQuiz: function() {
     //   this.quizNumber = 1;
     //   this.totalCorrectCount = 0;

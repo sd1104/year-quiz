@@ -7,7 +7,7 @@ class Api::V1::QuizzesController < ApplicationController
   rescue_from ActiveRecord::RecordNotFound, with: :render_status_404
 
   def index
-    quizzes = Quiz.order("RAND()").limit(1)
+    quizzes = Quiz.order("RAND()").limit(5)
     render json: quizzes
   end
 
