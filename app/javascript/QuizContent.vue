@@ -2,10 +2,10 @@
   <article class="container">
     <section>
       <div v-if="hidden">
-        <h1>
+        <h5>
           問題{{ quizNumber }}
           {{ quizzes[quizNumber - 1].title }}
-        </h1>
+        </h5>
         <div v-if="showQuiz">
           <div>
             <ul v-for="choice in quizChoices" :key="choice.id">
@@ -30,25 +30,45 @@
         </p>
         <button @click="Next()" type="button" class="btn btn-default">次へ</button>
       </div>
+
+      <div v-if="showResult">
+        <h4>結果だよーん</h4>
+        <p>
+          正解数は
+          {{ totalCorrectCount }}
+          だよーん
+        </p>
+        <router-link :to="{ name: 'QuizPage1'}" id="router-link" @click="ResetQuiz()">
+          <span class="nav-title">
+            もう一度する
+          </span>
+        </router-link>
+        <a href="/#/quiz/page1" @click="ResetQuiz()">
+          <button>
+            もう一度する
+          </button>
+        </a>
+      </div>
+
     </section>
 
-    <!-- <sectin>
-      <pre>
-        {{ $data }}
-      </pre>
-    </sectin> -->
+    <!-- <pre>
+      {{ $data }}
+    </pre> -->
 
     <section v-if="alertMessage">
       <p>
         <i></i>クイズはまだ登録されていません。
         <i></i>
       </p>
-      <a href="/">クイズTOPへ</a>
+      <router-link :to="{ name: 'Index'}" id="router-link">
+        <span class="nav-title">
+          トップへ
+        </span>
+      </router-link>
     </section>
 
-    <!-- <quiz-result ref="result" :totalCorrectNum="totalCorrectNum"></quiz-result> -->
   </article>
-
 
 </template>
 
@@ -77,6 +97,7 @@ export default {
       hidden: false,
       alertMessage: false,
       judgement: "",
+      showResult: false
     };
   },
   created() {
@@ -84,6 +105,7 @@ export default {
   },
   methods: {
     InsertQuizzes() {
+      console.log('insert')
       axios
         .get('api/v1/quizzes.jason')
         .then( response => {
@@ -149,11 +171,19 @@ export default {
         this.showQuiz = true;
         this.showExplanation = false;
         this.quizNumber++;
-        // this.nextcounter++;
-        this.InsertChoices(this.quizNumber - 1);
       } else {
-        this.$refs.result.showResult();
+        this.ShowResult();
       }
+    },
+    ShowResult: function() {
+      this.hidden = false;
+      this.showQuiz = false;
+      this.showExplanation = false;
+      this.showResult = true;
+    },
+    ResetQuiz: function() {
+      this.quizNumber = 1;
+      this.totalCorrectCount = 0;
     }
   }
 }
@@ -161,7 +191,7 @@ export default {
 
 <style scoped>
 p {
-  font-size: 2em;
+  font-size: 16px;
   text-align: center;
 }
 </style>

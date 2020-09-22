@@ -6,7 +6,7 @@
 
 <script>
 export default {
-  name: "QuizHeader",
+  name: "QuizFooter",
   data: function () {
     return {
       message: 'Footer Parts'

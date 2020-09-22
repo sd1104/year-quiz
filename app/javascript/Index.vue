@@ -18,16 +18,15 @@
 
 <script>
 import QuizHeader from "QuizHeader.vue"
+import QuizPage1 from "QuizPage1.vue"
 import QuizFooter from "QuizFooter.vue"
-import QuizContent from "QuizContent.vue"
-import axios from 'axios';
 
 export default {
-  name: "QuizIndex",
+  name: "Index",
   components: {
     QuizHeader,
     QuizFooter,
-    QuizContent
+    QuizPage1
   },
   data: function () {
     return {
