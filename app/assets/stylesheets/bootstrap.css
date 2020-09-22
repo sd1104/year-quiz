@@ -23,8 +23,54 @@
   color: lightblue;
 }
 
+#TOP {
+  min-height: calc(98vh - 100px);
+}
 
+.top-img {
+  position: relative;
+}
 
+.quiz-link {
+  margin: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 70px;
+  left: auto;
+  border: 1px solid #cce7ff;
+  border-radius: 3px;
+  background: rgb(204, 231, 255,0.7);
+}
+
+#index-image {
+  width: 100%;
+}
+
+.intro-sentence {
+  font-size: 22px;
+}
+
+.top-introduction {
+  margin: 30px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-title {
+  margin-bottom: 30px;
+}
+
+.Title {
+  font-size: 25px;
+  font-weight: bold;
+}
 
 
 .quiz-card {
