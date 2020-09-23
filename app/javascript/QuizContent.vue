@@ -42,7 +42,24 @@
         <div class="quiz-card">
           <h4 class="result-title">結果</h4>
           <div class="quiz-result-body">
-            <div class="result-paresetation">
+            <div class="result-paresetation" v-if="totalCorrectCount === 5">
+              全問正解！！
+              <br>
+              <span class="result-count">
+                間違いなく
+              </span>
+              あなたは30代ですね
+            </div>
+            <div class="result-paresetation" v-else-if="totalCorrectCount === 0">
+              残念！！
+              <br>
+              <span class="result-count">
+                全問ハズレ
+              </span>
+              <br>
+              あなたは３０代じゃありませんね
+            </div>
+            <div class="result-paresetation" v-else>
               正解数は
               <br>
               <span class="result-count">
@@ -106,7 +123,7 @@ export default {
       hidden: false,
       alertMessage: false,
       judgement: "",
-      showResult: false
+      showResult: false,
     };
   },
   created() {
@@ -179,6 +196,7 @@ export default {
         this.showQuiz = true;
         this.showExplanation = false;
         this.quizNumber++;
+        this.InsertChoices(this.quizNumber - 1);
       } else {
         this.ShowResult();
       }
