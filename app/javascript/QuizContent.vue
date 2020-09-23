@@ -38,43 +38,50 @@
         </div>
       </div>
 
-      <div v-if="showResult">
-        <div class="quiz-card">
-          <h4 class="result-title">結果</h4>
-          <div class="quiz-result-body">
-            <div class="result-paresetation" v-if="totalCorrectCount === 5">
-              全問正解！！
-              <br>
-              <span class="result-count">
-                間違いなく
-              </span>
-              あなたは30代ですね
-            </div>
-            <div class="result-paresetation" v-else-if="totalCorrectCount === 0">
-              残念！！
-              <br>
-              <span class="result-count">
-                全問ハズレ
-              </span>
-              <br>
-              あなたは３０代じゃありませんね
-            </div>
-            <div class="result-paresetation" v-else>
-              正解数は
-              <br>
-              <span class="result-count">
-                {{ totalCorrectCount }}問
-              </span>
-              ／５問でした
-            </div>
-            <router-link :to="{ name: 'Index'}" id="router-link">
-              <button type="button" class="result-btn">
-                トップへ
+      <transition>
+        <div v-if="showResult">
+          <div class="quiz-card">
+            <h4 class="result-title">結果</h4>
+            <div class="quiz-result-body">
+              <div class="result-paresetation" v-if="totalCorrectCount === 5">
+                全問正解！！
+                <br>
+                <span class="result-count">
+                  間違いなく
+                </span>
+                あなたは30代ですね
+              </div>
+              <div class="result-paresetation" v-else-if="totalCorrectCount === 0">
+                残念！！
+                <br>
+                <span class="result-count">
+                  全問ハズレ
+                </span>
+                <br>
+                あなたは３０代じゃありませんね
+              </div>
+              <div class="result-paresetation" v-else>
+                正解数は
+                <br>
+                <span class="result-count">
+                  {{ totalCorrectCount }}問
+                </span>
+                ／５問でした
+              </div>
+
+              <button type="button" class="result-btn" @click="Reload()">
+                リトライ
               </button>
-            </router-link>
+              <router-link :to="{ name: 'Index'}" id="router-link">
+                <button type="button" class="result-btn">
+                  トップへ
+                </button>
+              </router-link>
+
+            </div>
           </div>
         </div>
-      </div>
+      </transition>
 
     </section>
 
@@ -190,6 +197,9 @@ export default {
       } else {
         this.judgement = false;
       }
+    },
+    Reload: function() {
+      this.$router.go({path: this.$router.currentRoute.path, force: true})
     },
     Next: function() {
       if (this.quizNumber < this.totalQuizCount) {
