@@ -70,7 +70,8 @@
 
 
 .quiz-card {
-  border: 1px solid #cce7ff;
+  border: 5px solid #cce7ff;
+  border-radius: 10px;
 }
 .quiz-title {
   color: #010079;
