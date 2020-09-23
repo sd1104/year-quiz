@@ -13,6 +13,7 @@
       <div @click="MenuToggle" v-else v-html="closeBtn">
         {{ closeBtn }}
       </div>
+
     </nav>
 
     <div>
@@ -54,7 +55,6 @@ export default {
   },
   methods: {
     MenuToggle: function() {
-      console.log('test')
       if (this.menuToggle === true) {
         this.menuToggle = false;
         this.menuPaper = true;
