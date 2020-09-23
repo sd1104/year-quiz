@@ -5,6 +5,16 @@
         クイズ -30sの思い出-
       </span>
     </router-link>
+
+    <div @click="MenuToggle" v-if="menuToggle" v-html="menuBtn">
+      <transition name="fade">
+        {{ menuBtn }}
+      </transition>
+    </div>
+    <div @click="MenuToggle" v-else v-html="closeBtn">
+      {{ closeBtn }}
+    </div>
+
   </nav>
 </template>
 
@@ -13,8 +23,20 @@ export default {
   name: "QuizHeader",
   data: function () {
     return {
-      message: 'Header parts'
+      menuToggle: true,
+      menuBtn: '<i class="fas fa-bars"></i>',
+      closeBtn: '<i class="fas fa-times"></i>'
     };
+  },
+  methods: {
+    MenuToggle: function() {
+      console.log('test')
+      if (this.menuToggle === true) {
+        this.menuToggle = false;
+      } else {
+        this.menuToggle = true
+      }
+    }
   }
 }
 </script>

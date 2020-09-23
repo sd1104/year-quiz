@@ -7,6 +7,12 @@
   height: 60px !important;
 }
 
+.fa-bars,
+.fa-times {
+  font-size: 30px;
+  color: gray;
+}
+
 .footer {
   line-height: 40px;
 }
