@@ -8,7 +8,15 @@
       <div id="TOP">
 
         <div class="top-img">
-          <img v-bind:src="require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s2.jpeg')" alt="index-image" id="index-image">
+
+          <div class="slider-outer">
+            <transition name="fade">
+              <div class="slider-inner" v-if="currentSlide === index" v-for="(slide, index) in slides" :key="index" >
+                <img class="slide-img" v-bind:src="slides[index].image" :key="slides[index].image" id="index-image">
+              </div>
+            </transition>
+          </div>
+
           <div class="quiz-link">
             <div class="intro-sentence">
               <span class="Title">クイズ 30sの思い出 </span>へようこそ。３０代には懐かしい出来事を年号クイズでどうぞ。
@@ -19,6 +27,7 @@
               </button>
             </router-link>
           </div>
+
         </div>
 
         <div class="top-introduction">
@@ -59,7 +68,22 @@ export default {
   },
   data: function () {
     return {
-    }
+      currentSlide: 0,
+      slides: [
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s1.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s2.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s3.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s4.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s5.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s6.jpeg') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s7.jpeg') }
+      ]
+    };
+  },
+  mounted() {
+    setInterval(() => {
+      this.currentSlide = this.currentSlide < this.slides.length -1 ? this.currentSlide +1 : 0
+    }, 7000)
   }
 }
 </script>

@@ -46,10 +46,6 @@
   background: rgb(204, 231, 255,0.7);
 }
 
-#index-image {
-  width: 100%;
-}
-
 .intro-sentence {
   font-size: 22px;
 }
@@ -158,4 +154,29 @@
   height: 50px;
   width: 190px;
   background:  #cce7ff;
+}
+
+
+
+.slider-outer{
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  width: 100%;
+}
+.slider-inner{
+  position: absolute;
+  height: 450px;
+  width: 100%;
+}
+#index-image {
+  height: 450px;
+  width: 100%;
+  object-fit: cover;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
