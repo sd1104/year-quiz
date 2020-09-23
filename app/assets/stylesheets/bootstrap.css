@@ -5,13 +5,34 @@
 
 .header {
   height: 60px !important;
+  position: relative;
 }
-
 .fa-bars,
 .fa-times {
   font-size: 30px;
   color: gray;
 }
+.menu-paper {
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  color: blue;
+  background-color: #cce7ff;
+  opacity: 0.9;
+  z-index: 10;
+}
+.menu-paper-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+.menu-paper-list {
+  margin: 10px 0;
+}
+
 
 .footer {
   line-height: 40px;
