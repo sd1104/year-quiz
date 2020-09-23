@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav class="navbar navbar-expand-lg navbar-light header" style="background-color: #e3f2fd;">
-      <router-link :to="{ name: 'Index'}" id="router-link">
+      <router-link :to="{ name: 'Index'}" id="router-link" >
         <span class="nav-title">
           クイズ -30sの思い出-
         </span>
@@ -20,12 +20,16 @@
         <ul class="menu-paper-lists">
           <li class="menu-paper-list">
             <router-link :to="{ name: 'Index'}" id="router-link">
-              トップ
+              <span class="nav-title">
+                トップ
+              </span>
             </router-link>
           </li>
           <li class="menu-paper-list">
             <router-link :to="{ name: 'QuizPage1'}">
-              クイズ
+              <span class="nav-title">
+                クイズ
+              </span>
             </router-link>
           </li>
         </ul>
@@ -38,7 +42,6 @@
 </template>
 
 <script>
-console.log(location);
 export default {
   name: "QuizHeader",
   data: function () {
