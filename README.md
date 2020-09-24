@@ -1,9 +1,14 @@
 ## クイズ -90sの思い出-
 
 ## アプリ開発背景
-求人サイトの使用言語の欄で何がより使われているかを調べた。結果、AWSとJavascriptが最も多かった。
+プログラミングの自主学習のために作ったアプリ。
+何を勉強するのかを考えるにあたって、求人サイトの使用言語の欄でどの言語がより使われているかを調べた。
+結果、AWSとJavascriptが最も多かった。
 作者がJavascriptを以前から学習してみたいと考えていたので、JavascriptとVue.jsの勉強とポートフォリオ作りを兼ねて作ろうと考えた。
 
+
+- 学習したUdemyのコース
+  - Vue JS入門決定版！jQueryを使わないWeb開発　ー導入からアプリケーション開発まで体系的に動画で学ぶ
 - 参考にしたQiitaの記事
   - LaravelとVue.jsでクイズアプリを作った話 [ https://qiita.com/kanasann1106/items/c83d52f966020ee3be79 ]
   - Ruby on Rails, Vue.js で始めるモダン WEB アプリケーション入門 [https://qiita.com/tatsurou313/items/4f18c0d4d231e2fb55f4]
