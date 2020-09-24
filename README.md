@@ -10,8 +10,8 @@
 - 学習したUdemyのコース
   - Vue JS入門決定版！jQueryを使わないWeb開発　ー導入からアプリケーション開発まで体系的に動画で学ぶ
 - 参考にしたQiitaの記事
-  - LaravelとVue.jsでクイズアプリを作った話 [ https://qiita.com/kanasann1106/items/c83d52f966020ee3be79 ]
-  - Ruby on Rails, Vue.js で始めるモダン WEB アプリケーション入門 [https://qiita.com/tatsurou313/items/4f18c0d4d231e2fb55f4]
+  - LaravelとVue.jsでクイズアプリを作った話 https://qiita.com/kanasann1106/items/c83d52f966020ee3be79
+  - Ruby on Rails, Vue.js で始めるモダン WEB アプリケーション入門 https://qiita.com/tatsurou313/items/4f18c0d4d231e2fb55f4
 
 ## アプリ紹介
 ３択クイズアプリです。
