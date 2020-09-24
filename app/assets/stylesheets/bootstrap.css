@@ -6,6 +6,8 @@
 .header {
   height: 60px !important;
   position: relative;
+  display: flex;
+  justify-content: space-between;
 }
 .fa-bars,
 .fa-times {
@@ -57,6 +59,8 @@
 
 .top-img {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .quiz-link {
@@ -69,6 +73,7 @@
   position: absolute;
   top: 70px;
   left: auto;
+  right: auto;
   border: 1px solid #cce7ff;
   border-radius: 3px;
   background: rgb(204, 231, 255,0.7);

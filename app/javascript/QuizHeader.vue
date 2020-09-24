@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light header" style="background-color: #e3f2fd;">
       <router-link :to="{ name: 'Index'}" id="router-link" >
         <span class="nav-title">
-          クイズ -30sの思い出-
+          クイズ -90sの思い出-
         </span>
       </router-link>
 

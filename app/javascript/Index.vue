@@ -19,7 +19,7 @@
 
           <div class="quiz-link">
             <div class="intro-sentence">
-              <span class="Title">クイズ 30sの思い出 </span>へようこそ。３０代には懐かしい出来事を年号クイズでどうぞ。
+              <span class="Title">クイズ 90sの思い出 </span>へようこそ。1990年代の出来事を年号クイズでどうぞ。
             </div>
             <router-link :to="{ name: 'QuizPage1'}">
               <button type="button" class="result-btn">
@@ -33,11 +33,11 @@
         <div class="top-introduction">
           <h5 class="intro-title">〜　クイズ 30sの思い出　〜</h5>
           <div class="quiz-explain">
-            ３０代が人生をふり返ってみて懐かしいと思えるような出来事をクイズにしました。
+            １９９0年代の懐かしい？出来事をクイズにしました。
             あんなことや、こんなことがありましたね。
-            <br>そんな出来事を年号クイズにしました。
-            <br>当たれば当たるほどあなたは３０代です。
-            もう２０代の栄光は過ぎ去りましたww
+            <br>令和になった頃に３０代の人には、記憶に残っている出来事が多いはず。
+            <br>つまり、よく分かるほど３０代ってことですね。
+            いわゆる昭和生まれです。
           </div>
         </div>
 

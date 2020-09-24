@@ -49,7 +49,7 @@
                 <span class="result-count">
                   間違いなく
                 </span>
-                あなたは30代ですね
+                あなたは昭和生まれですね
               </div>
               <div class="result-paresetation" v-else-if="totalCorrectCount === 0">
                 残念！！
@@ -58,7 +58,7 @@
                   全問ハズレ
                 </span>
                 <br>
-                あなたは３０代じゃありませんね
+                あなたは昭和生まれじゃありませんね
               </div>
               <div class="result-paresetation" v-else>
                 正解数は
