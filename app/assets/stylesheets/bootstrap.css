@@ -5,13 +5,43 @@
 
 .header {
   height: 60px !important;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
+.fa-bars,
+.fa-times {
+  font-size: 30px;
+  color: gray;
+}
+.menu-paper {
+  min-height: calc(100vh - 60px);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  color: blue;
+  background-color: #cce7ff;
+  opacity: 0.9;
+  z-index: 10;
+}
+.menu-paper-lists {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 20px;
+}
+.menu-paper-list {
+  margin: 10px 0;
+}
+
 
 .footer {
   line-height: 40px;
 }
 
 .nav-title {
+  color: #007bff;
   font-size: 25px;
   margin-right: 50px;
 }
@@ -29,6 +59,8 @@
 
 .top-img {
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .quiz-link {
@@ -41,6 +73,7 @@
   position: absolute;
   top: 70px;
   left: auto;
+  right: auto;
   border: 1px solid #cce7ff;
   border-radius: 3px;
   background: rgb(204, 231, 255,0.7);
@@ -187,7 +220,6 @@
   transform: translate(0px, 0px);
   transition: transform 1s cubic-bezier(0, 0, 0.2, 1) 0ms;
 }
-
 .v-enter,
 .v-leave-to {
   transform: translateY(-100vh) translateY(0px);

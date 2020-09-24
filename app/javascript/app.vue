@@ -23,7 +23,6 @@
   export default {
     router
   }
-
 </script>
 
 <style scoped>
