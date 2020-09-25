@@ -52,3 +52,6 @@ production:
   database: year_quiz_production
   username: year_quiz
   password: <%= ENV['YEAR_QUIZ_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
