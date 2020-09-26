@@ -67,10 +67,10 @@ export default {
     return {
       currentSlide: 0,
       slides: [
-        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s2.jpeg') },
-        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s5.jpeg') },
-        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s6.jpeg') },
-        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s7.jpeg') }
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s2.png') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s5.png') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s6.png') },
+        { image: require('/Users/satouhiroshi/projects/year-quiz/app/assets/images/90s7.png') }
       ]
     };
   },
