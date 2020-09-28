@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   namespace :api do
     namespace :v1 do
-      resources :quizzes, only: [ :index, :show ]
+      resources :quizzes, only: [ :index ]
     end
   end
   ActiveAdmin.routes(self)
