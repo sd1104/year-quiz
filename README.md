@@ -54,3 +54,8 @@
 ruby 2.6.5
 Rails 6.0.3.3
 vue 2.6.12
+
+## データベース設計
+
+![名称未設定ファイル](https://user-images.githubusercontent.com/67669319/95018747-976b7980-069c-11eb-83fc-4580703fc15d.png)
+
