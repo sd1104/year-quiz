@@ -1,5 +1,6 @@
 ## クイズ -90sの思い出-
 ![スクリーンショット 2020-09-24 23 24 23](https://user-images.githubusercontent.com/67669319/94158276-2e764b80-febd-11ea-91bc-3c99e9f84b1f.png)
+お試しは[コチラ](https://yearquiz.herokuapp.com)
 
 ## アプリ開発背景
 プログラミングの自主学習のために作ったアプリ。
